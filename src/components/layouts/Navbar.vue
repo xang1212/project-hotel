@@ -51,11 +51,11 @@
               ><span>ຂໍ້ມູນໂຮງແຮມ</span></router-link
             >
           </li>
-          <li >
+          <li>
             <router-link tag="a" to="/faq"><span>ຊ່ວຍເຫຼືອ</span></router-link>
           </li>
 
-          <li v-if="(user.role==0|| user.role==1)">
+          <li v-if="!(user.role == 0 || user.role == 1)">
             <div
               style="color: white; cursor: pointer"
               class="text-md-body-2 text-center ml-4"
@@ -71,6 +71,7 @@
                     class="us white--text text-capitalize font-weight-black"
                   >
                     {{ user.name }}
+
                     <v-icon color="white">mdi-chevron-down</v-icon>
                   </span>
                 </template>
@@ -103,15 +104,19 @@
                       }}</span>
                     </a>
                   </v-list-item> -->
-               <v-list-item v-if="user.role == 0">
-                <a href="/profile" style="color: black">{{items.title1}}</a>
-               </v-list-item>
-               <v-list-item v-if="user.role == 1">
-                <a href="" style="color: black">{{items.title2}}</a>
-               </v-list-item>
-               <v-list-item>
-                <a href="" @click="Logout" style="color: black">{{items.title3}}</a>
-               </v-list-item>
+                  <v-list-item v-if="user.role == 0">
+                    <a href="/profile" style="color: black">{{
+                      items.title1
+                    }}</a>
+                  </v-list-item>
+                  <v-list-item v-if="user.role == 1">
+                    <a href="" style="color: black">{{ items.title2 }}</a>
+                  </v-list-item>
+                  <v-list-item>
+                    <a href="" @click="Logout" style="color: black">{{
+                      items.title3
+                    }}</a>
+                  </v-list-item>
                 </v-list>
               </v-menu>
               <!-- <span  @click="Logout" style="color: white">Logut</span> -->
@@ -122,8 +127,8 @@
           ><span>log out</span></router-link
         > -->
 
-          <li v-if="!(user.role==0|| user.role==1)">
-            <router-link tag="a" to="/login" 
+          <li v-if="!(user.role == 0 || user.role == 1)">
+            <router-link tag="a" to="/login"
               ><span>ເຂົ້າສູ່ລະບົບ</span></router-link
             >
           </li>
@@ -225,8 +230,6 @@ nav ul li a {
 
 <script>
 import header from "@/hooks/Headers";
-import { mapGetters } from "vuex";
-import { IS_User_AUTHENTICATE_GETTER } from "@/store/module/user";
 export default {
   name: "NavbarView",
   setup() {},
@@ -241,11 +244,11 @@ export default {
       // user: null,
       // token: this.$store.state["users/user"],
       // items: [{title1: "ຂໍ້ມູນສວ່ນຕົວ" }, { title2: "ອອກຈາກລະບົບ" }, { title3: "dashboard" }],
-      items:{
-         title1: "ຂໍ້ມູນສວ່ນຕົວ" ,
-         title2: "dashboard" ,
-         title3: "ອອກຈາກລະບົບ" ,
-      }
+      items: {
+        title1: "ຂໍ້ມູນສວ່ນຕົວ",
+        title2: "dashboard",
+        title3: "ອອກຈາກລະບົບ",
+      },
     };
   },
   watch: {
@@ -254,17 +257,35 @@ export default {
     },
   },
   beforeCreate() {
-    this.$store.dispatch("users/getData");
-    // this.user = ;
+    // ไวบ่อนนี่ใช้$headers br dai der anny
+     this.$store.dispatch("users/getData");
   },
+
   created() {
-    console.log(55555555, this.user);
+    // ไวบ่อนนี่ใช้$headers br dai der anny
+     console.log(55555555, this.user);
+     console.log(
+       "this is event from test",
+      this.$store.getters["users/sendData"]
+     );
+  },
+  beforeMount() {
+    // ไวบ่อนนี่ใช้$headers br dai der anny
+    // this.$store.dispatch("users/eventStart");
+  },
+  mounted() {
+    this.$store.dispatch("users/eventStart");
+    console.log(666, this.$headers);
+    console.log(
+      6666666666666666666,
+      this.$store.getters["users/GetUser"]
+    );
   },
   methods: {
     Logout() {
       localStorage.clear();
       window.location.reload();
-      this.$router.push('/')
+      this.$router.push("/");
     },
   },
   computed: {

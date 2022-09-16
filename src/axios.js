@@ -1,7 +1,7 @@
 import axios from "axios"
 
 
-axios.defaults.baseURL = 'https://e67b-183-182-111-94.ap.ngrok.io/api/';
+axios.defaults.baseURL = 'https://0b62-183-182-111-94.ap.ngrok.io/api/';
 // console.log('here axios')
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token')
 

@@ -193,6 +193,7 @@ export default {
         localStorage.setItem("token", token);
 
         this.$router.push("/login");
+        // setTimeout(console("sss", 1000));
       });
     },
 

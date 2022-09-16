@@ -40,6 +40,12 @@ export default new Vuex.Store({
       return state.user;
     }
   },
+
+
+
+
+
+
   mutations: {
     SET_TOKEN: (state, token) => {
       state.token = token;
@@ -51,6 +57,11 @@ export default new Vuex.Store({
       Object.assign(state, getDefaultState());
     }
   },
+
+
+
+
+
   actions: {
     login: ({ commit, dispatch }, { token, user }) => {
       commit('SET_TOKEN', token);
@@ -60,7 +71,10 @@ export default new Vuex.Store({
     },
     logout: ({ commit }) => {
       commit('RESET', '');
-    }
+    },
+    // testAC(){
+    //   console.log('this action')
+    // }
   },
   modules: {
     users

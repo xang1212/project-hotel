@@ -43,9 +43,7 @@
                 >
                 <p>
                   ທ່ານຍັງບໍ່ມີບັນຊີບໍ?
-                  <router-link to="/signup"
-                    ><span> ລົງທະບຽນ</span></router-link
-                  >
+                  <router-link to="/signup"><span> ລົງທະບຽນ</span></router-link>
                 </p>
               </v-col>
             </v-row>
@@ -65,7 +63,7 @@ export default {
     return {
       show1: false,
       password: "Password",
-      valid : false,
+      valid: false,
       rules: {
         required: (value) => !!value || "Required.",
         min: (v) => v.length >= 1 || "Min 8 characters",
@@ -82,21 +80,19 @@ export default {
   methods: {
     //login
     async logIn() {
-      if(this.$refs.form.validate() == true){
+      if (this.$refs.form.validate() == true) {
         await axios.post("login", this.login).then((res) => {
-        let token = res.data.token;
+          let token = res.data.token;
 
-        axios.defaults.headers.common["Authorization"] = "Bearer " + token;
-        localStorage.setItem("token", token);
-        this.$router.replace("/");
-        console.log.alerd('')
-        setTimeout(() => {
-          window.location.reload();
-        }, 10);
-        // window.location.reload();
-      });
+          axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+          localStorage.setItem("token", token);
+          this.$router.replace("/");
+          setTimeout(() => {
+            window.location.reload();
+          }, 10);
+          // window.location.reload();
+        });
       }
-
 
       // const response = await axios.post('login', this.user);
 
@@ -111,6 +107,6 @@ export default {
 v-text-field {
   margin-right: 20px;
   margin-left: 20px;
-  font-size:14px ;
+  font-size: 14px;
 }
 </style>

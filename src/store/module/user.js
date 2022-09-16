@@ -4,7 +4,8 @@ import axios from "axios";
 // const url_API = process.env.VUE_APP_USER_API_URL
 const state = {
     user:{},
-    userLoading:false
+    userLoading:false,
+    data:'',
 };
 const getters = {
     GetUser:(state)=>{
@@ -12,7 +13,10 @@ const getters = {
     },
     loadding:(state)=>{
         return state.userLoading
-    }
+    },
+    sendData:(state)=>{
+        return state.data
+    },
 };
 
 const mutations = {
@@ -22,17 +26,17 @@ const mutations = {
     sendToUser(state,data){
         state.user = data
     }
+    ,
+    sendData(state, u){
+        state.data = u
+    }
 };
 
 const actions = {
     async getData({commit}){
+        
         commit('userLoading',true)
-        await axios.get("user", {
-            headers: {
-                "Content-Type": "application/json",
-                "ngrok-skip-browser-warning": true,
-              },
-        }).then((res)=>{
+        await axios.get("user", this.$headers).then((res)=>{
             commit('sendToUser',res.data)
             commit('userLoading',false)
             
@@ -44,6 +48,11 @@ const actions = {
             }
             // console.log(err)
         })
+    },
+    eventStart({commit}){
+        let a = 10;
+        console.log(666,this.$headers)
+        commit('sendData',a)
     }
 };
 
@@ -55,4 +64,3 @@ export default {
     actions,
 };
 
-export const IS_User_AUTHENTICATE_GETTER = '[getters] is user authenticated'

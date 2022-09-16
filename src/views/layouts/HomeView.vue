@@ -5,146 +5,147 @@
       <Slider />
     </div>
     <!--End Slider image-->
-
     <div class="bd">
-          <!--part 2-->
-    <v-container class="white--text" style="padding-top: 70px">
-      <h2>Keolanee</h2>
-      <p class="pa-5">
-        The v-img component is packed with features to support rich media.
-      </p>
-      <v-row align="center" justify="center">
-        <v-col align="center" justify="center">
-          <v-img
-            max-width="300"
-            v-for="(item, i) in items"
-            :key="i"
-            :src="item.src"
-          />
-        </v-col>
-        <v-col align="center" justify="center">
-          <v-img
-            max-width="300"
-            v-for="(item, i) in items"
-            :key="i"
-            :src="item.src1"
-          />
-        </v-col>
-        <v-col align="center" justify="center">
-          <v-img
-            max-width="300"
-            v-for="(item, i) in items"
-            :key="i"
-            :src="item.src2"
-          />
-        </v-col>
-      </v-row>
-    </v-container>
-
-    <!--part 3-->
-    <v-container class="white--text" style="padding-top: 70px">
-      <!--Text part3-->
-      <div class="txt">
-        <v-row>
-          <v-col cols="6">
+      <!--part 2-->
+      <v-container class="white--text" style="padding-top: 70px">
+        <h2>Keolanee</h2>
+        <p class="pa-5">
+          The v-img component is packed with features to support rich media.
+        </p>
+        <v-row align="center" justify="center">
+          <v-col align="center" justify="center">
             <v-img
-              alt="img part 3"
-              max-width="fit"
-              max-height="300"
+              max-width="300"
               v-for="(item, i) in items"
               :key="i"
-              :src="item.src3"
+              :src="item.src"
             />
           </v-col>
-          <v-col cols="6" align="start">
-            <div>
-              <router-link style="color: white" class="link" to="/room">
-                <span class="font-weight-blod text-h4"
-                  ><p>
-                    ຫ້ອງພັກ /<span class="font-italic text-h6">room type</span>
-                  </p></span
-                >
-              </router-link>
-
-              <p>
-                Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit
-                amet. Mauris cursus commodo interdum. Praesent ut risus eget
-                metus luctus accumsan id ultrices nunc. Sed at orci sed massa
-                consectetur dignissim a sit amet dui. Duis commodo vitae velit
-                et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat
-                augue vel ipsum ultrices, cursus iaculis dui sollicitudin.
-                Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci
-                varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus.
-              </p>
-              <router-link
-                style="color: black"
-                class="text-decoration-none"
-                to="/room"
-              >
-                <v-btn block link>
-                  <h3>
-                    ຈອງຫ້ອງ
-                    <v-icon color="dark"> mdi-arrow-right</v-icon>
-                  </h3></v-btn
-                ></router-link
-              >
-            </div>
+          <v-col align="center" justify="center">
+            <v-img
+              max-width="300"
+              v-for="(item, i) in items"
+              :key="i"
+              :src="item.src1"
+            />
+          </v-col>
+          <v-col align="center" justify="center">
+            <v-img
+              max-width="300"
+              v-for="(item, i) in items"
+              :key="i"
+              :src="item.src2"
+            />
           </v-col>
         </v-row>
-      </div>
-    </v-container>
+      </v-container>
 
-    <!--part 4-->
-    <v-container class="white--text">
-      <hr style="margin-bottom: 30px" />
-      <div class="text-left txt">
-        <span class="text-h4"><p>ຫ້ອງອາຫານ</p></span>
-        <p>
-          รับประทานอาหารในหลวงพระบางอย่างผ่อนคลายและผสมผสานความสร้างสรรค์เข้าไปด้วยที่รีสอร์ทของเรา
-          เพลิดเพลินไปกับการรับประทานอาหารได้ตลอดทั้งวันกับอาหารแบบอีสต์ มีท
-          เวสต์
-          ซึ่งเป็นการผสมผสานกันระหว่างความเป็นตะวันตกของอาหารบิสโตรแบบฝรั่งเศสกับความเป็นตะวันออกของอาหารพื้นเมืองลาว
-          ที่หนึ่งในร้านอาหารที่มีเสน่ห์น่าดึงดูดที่สุดในหลวงพระบาง
-          จิบกาแฟหอมกรุ่น น้ำผลไม้แสนสดชื่น
-          และค็อกเทลที่ได้รับแรงบันดาลใจจากท้องถิ่น
-          และมองออกไปยังสระว่ายน้ำหรือถนนที่คึกคัก
-        </p>
+      <!--part 3-->
+      <v-container class="white--text" style="padding-top: 70px">
+        <!--Text part3-->
+        <div class="txt">
+          <v-row>
+            <v-col cols="6">
+              <v-img
+                alt="img part 3"
+                max-width="fit"
+                max-height="300"
+                v-for="(item, i) in items"
+                :key="i"
+                :src="item.src3"
+              />
+            </v-col>
+            <v-col cols="6" align="start">
+              <div>
+                <router-link style="color: white" class="link" to="/room">
+                  <span class="font-weight-blod text-h4"
+                    ><p>
+                      ຫ້ອງພັກ /<span class="font-italic text-h6"
+                        >room type</span
+                      >
+                    </p></span
+                  >
+                </router-link>
 
-        <v-img
-          max-width="1920px"
-          max-height="400px"
-          src="https://i.pinimg.com/564x/05/f9/9e/05f99e38ef628533087e6bec49f95e8f.jpg"
-        ></v-img>
-      </div>
-    </v-container>
+                <p>
+                  Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit
+                  amet. Mauris cursus commodo interdum. Praesent ut risus eget
+                  metus luctus accumsan id ultrices nunc. Sed at orci sed massa
+                  consectetur dignissim a sit amet dui. Duis commodo vitae velit
+                  et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat
+                  augue vel ipsum ultrices, cursus iaculis dui sollicitudin.
+                  Vestibulum eu ipsum vel diam elementum tempor vel ut orci.
+                  Orci varius natoque penatibus et magnis dis parturient montes,
+                  nascetur ridiculus mus.
+                </p>
+                <router-link
+                  style="color: black"
+                  class="text-decoration-none"
+                  to="/room"
+                >
+                  <v-btn block link>
+                    <h3>
+                      ຈອງຫ້ອງ
+                      <v-icon color="dark"> mdi-arrow-right</v-icon>
+                    </h3></v-btn
+                  ></router-link
+                >
+              </div>
+            </v-col>
+          </v-row>
+        </div>
+      </v-container>
 
-    <!--part 5-->
-    <v-container class="gallory">
-      <div class="align-center justify-center">
-        <h1 class="overline text-lg-h5">Gallery</h1>
-      </div>
-      <v-row style="padding-top: 30px">
-        <v-col v-for="img in imgs" :key="img.id" class="child-flex" cols="3">
-          <v-img :src="img.src" aspect-ratio="1" class="grey lighten-2">
-            <template v-slot:placeholder>
-              <v-row class="fill-height ma-0" align="center" justify="center">
-                <v-progress-circular
-                  indeterminate
-                  color="grey lighten-5"
-                ></v-progress-circular>
-              </v-row>
-            </template>
-          </v-img>
-        </v-col>
-      </v-row>
-    </v-container>
+      <!--part 4-->
+      <v-container class="white--text">
+        <hr style="margin-bottom: 30px" />
+        <div class="text-left txt">
+          <span class="text-h4"><p>ຫ້ອງອາຫານ</p></span>
+          <p>
+            รับประทานอาหารในหลวงพระบางอย่างผ่อนคลายและผสมผสานความสร้างสรรค์เข้าไปด้วยที่รีสอร์ทของเรา
+            เพลิดเพลินไปกับการรับประทานอาหารได้ตลอดทั้งวันกับอาหารแบบอีสต์ มีท
+            เวสต์
+            ซึ่งเป็นการผสมผสานกันระหว่างความเป็นตะวันตกของอาหารบิสโตรแบบฝรั่งเศสกับความเป็นตะวันออกของอาหารพื้นเมืองลาว
+            ที่หนึ่งในร้านอาหารที่มีเสน่ห์น่าดึงดูดที่สุดในหลวงพระบาง
+            จิบกาแฟหอมกรุ่น น้ำผลไม้แสนสดชื่น
+            และค็อกเทลที่ได้รับแรงบันดาลใจจากท้องถิ่น
+            และมองออกไปยังสระว่ายน้ำหรือถนนที่คึกคัก
+          </p>
+
+          <v-img
+            max-width="1920px"
+            max-height="400px"
+            src="https://i.pinimg.com/564x/05/f9/9e/05f99e38ef628533087e6bec49f95e8f.jpg"
+          ></v-img>
+        </div>
+      </v-container>
+
+      <!--part 5-->
+      <v-container class="gallory">
+        <div class="align-center justify-center">
+          <h1 class="overline text-lg-h5">Gallery</h1>
+        </div>
+        <v-row style="padding-top: 30px">
+          <v-col v-for="img in imgs" :key="img.id" class="child-flex" cols="3">
+            <v-img :src="img.src" aspect-ratio="1" class="grey lighten-2">
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular
+                    indeterminate
+                    color="grey lighten-5"
+                  ></v-progress-circular>
+                </v-row>
+              </template>
+            </v-img>
+          </v-col>
+        </v-row>
+      </v-container>
     </div>
   </div>
 </template>
 
 <script>
-import Slider from '@/components/layouts/Slider.vue';
+import Slider from "@/components/layouts/Slider.vue";
 
 export default {
   name: "HomeView",
@@ -203,6 +204,9 @@ export default {
       ],
     };
   },
+  mounted() {
+    console.log(this.$headers);
+  },
 };
 </script>
 
@@ -228,5 +232,4 @@ export default {
   margin-top: 70px;
   padding-bottom: 50px;
 }
-
 </style>

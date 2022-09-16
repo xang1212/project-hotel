@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/layouts/HomeView.vue'
 import Profile from '../views/layouts/Profile.vue'
+import detail from '../views/layouts/Booking/DetailView.vue'
 
 Vue.use(VueRouter)
 
@@ -11,6 +12,11 @@ const routes = [
     name: 'home',
     component: HomeView
   },  
+  {
+    path: '/detail',
+    name: 'detail',
+    component: detail
+  },
   {
     path: '/profile',
     name: 'profile',
@@ -48,7 +54,7 @@ const routes = [
     path: '/booking',
     name: 'booking',
     component: () => import('../views/layouts/Booking/Booking.vue')
-  },
+  }
   // {
   //   path: '/profile',
   //   name: 'profile',

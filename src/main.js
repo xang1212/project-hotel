@@ -5,9 +5,12 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 
 import './axios'
-Vue.config.productionTip = false
+// Vue.config.productionTip = false
 
-
+Vue.prototype.$headers = {
+  "Content-Type": "application/json",
+  "ngrok-skip-browser-warning": true,
+}
 new Vue({
   router,
   store,

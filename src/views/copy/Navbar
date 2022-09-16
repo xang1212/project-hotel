@@ -1,78 +1,37 @@
 <template>
   <div id="app">
     <nav class="dark--text body">
-      <v-app-bar
-        app
-        absolute
-        color="black"
-        elevation="6"
-        style="padding: 0px 50px"
-        tile
-      >
+      <v-app-bar app absolute color="black" elevation="6" style="padding: 0px 50px" tile>
         <router-link style="color: black" class="text-decoration-none" to="/">
-          <v-toolbar-title
-            class="text-uppercase d-flex align-center"
-            style="color: white"
-          >
-            <img
-              alt="logo"
-              v-for="(img, i) in imgs"
-              :key="i"
-              :src="img.src"
-              contain
-              width="50px"
-              class="ma-3"
-            />
+          <v-toolbar-title class="text-uppercase d-flex align-center" style="color: white">
+            <img alt="logo" v-for="(img, i) in imgs" :key="i" :src="img.src" contain width="50px" class="ma-3" />
             Keolanee Hotel
           </v-toolbar-title>
         </router-link>
         <v-spacer></v-spacer>
 
-        <router-link style="color: white" class="text-md-body-2" to="/"
-          ><span>ໜ້າຫຼັກ</span></router-link
-        >
-        <router-link style="color: white" class="text-md-body-2" to="/room"
-          ><span>ຫ້ອງພັກ</span></router-link
-        >
-        <router-link style="color: white" class="text-md-body-2" to="/info"
-          ><span>ຂໍ້ມູນໂຮງແຮມ</span></router-link
-        >
-        <router-link style="color: white" class="text-md-body-2" to="/faq"
-          ><span>ຊ່ວຍເຫຼືອ</span></router-link
-        >
+        <router-link style="color: white" class="text-md-body-2" to="/"><span>ໜ້າຫຼັກ</span></router-link>
+        <router-link style="color: white" class="text-md-body-2" to="/room"><span>ຫ້ອງພັກ</span></router-link>
+        <router-link style="color: white" class="text-md-body-2" to="/info"><span>ຂໍ້ມູນໂຮງແຮມ</span></router-link>
+        <router-link style="color: white" class="text-md-body-2" to="/faq"><span>ຊ່ວຍເຫຼືອ</span></router-link>
 
-        <div
-          v-if="this.user"
-          style="color: white; cursor: pointer"
-          class="text-md-body-2 text-center ml-4"
-        >
+        <div v-if="this.user" style="color: white; cursor: pointer" class="text-md-body-2 text-center ml-4">
           <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
-              <span
-                color="white"
-                dark
-                v-bind="attrs"
-                v-on="on"
-                text
-                class="white--text"
-              >
+              <span color="white" dark v-bind="attrs" v-on="on" text class="white--text">
                 {{ user.name }}
                 <v-icon color="white">mdi-chevron-down</v-icon>
               </span>
             </template>
             <v-list>
               <v-list-item v-for="(item, index) in items" :key="index">
-                <router-link
-                  to="/profile"
-                  style="color: black"
-                  class="text-decoration-none text-md-body-2"
-                >
+                <router-link to="/profile" style="color: black" class="text-decoration-none text-md-body-2">
                   <span style="cursor: pointer">{{ item.title1 }}</span>
                 </router-link>
                 <a class="text-md-body-2" style="color: black">
                   <span style="cursor: pointer" @click="Logout">{{
                     item.title2
-                  }}</span>
+                    }}</span>
                 </a>
               </v-list-item>
             </v-list>
@@ -84,13 +43,8 @@
           ><span>log out</span></router-link
         > -->
 
-        <router-link
-          v-if="!this.user"
-          style="color: white"
-          class="text-md-body-2"
-          to="/login"
-          ><span>ສະມັກສະມາຊິກ</span></router-link
-        >
+        <router-link v-if="!this.user" style="color: white" class="text-md-body-2" to="/login"><span>ສະມັກສະມາຊິກ</span>
+        </router-link>
       </v-app-bar>
     </nav>
     <router-view />
@@ -98,66 +52,70 @@
 </template>
 
 <style lang="scss">
-#app {
-  text-align: center;
-}
-nav {
-  a {
-    color: #2a2a2a;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 15px;
+  #app {
+    text-align: center;
   }
-}
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;700&display=swap");
-* {
-  font-family: "Noto Sans Lao", sans-serif;
-}
+
+  nav {
+    a {
+      color: #2a2a2a;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 15px;
+    }
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;700&display=swap");
+
+  * {
+    font-family: "Noto Sans Lao", sans-serif;
+  }
 </style>
 
 <script>
-import header from "@/hooks/Headers";
-export default {
-  name: "NavbarView",
-  setup() {},
+  import header from "@/hooks/Headers";
+  export default {
+    name: "NavbarView",
+    setup() { },
 
-  data() {
-    return {
-      imgs: [
-        {
-          src: "https://media.discordapp.net/attachments/826834529435648000/1007206321491300352/Keolanee_edited.png?width=662&height=662",
-        },
-      ],
-      // user: null,
-      // token: this.$store.state["users/user"],
-      items: [{ title1: "ຂໍ້ມູນສວ່ນຕົວ" }, { title2: "ອອກຈາກລະບົບ" }],
-    };
-  },
-  watch: {
-    token(newVale, oldvale) {
-      console.log("sdfhsadfhasdgfjasdjkf");
+    data() {
+      return {
+        imgs: [
+          {
+            src: "https://media.discordapp.net/attachments/826834529435648000/1007206321491300352/Keolanee_edited.png?width=662&height=662",
+          },
+        ],
+        // user: null,
+        // token: this.$store.state["users/user"],
+        items: [{ title1: "ຂໍ້ມູນສວ່ນຕົວ" }, { title2: "ອອກຈາກລະບົບ" }],
+      };
     },
-  },
-  beforeCreate() {
-    this.$store.dispatch("users/getData");
-    // this.user = ;
-  },
-  created() {
-    console.log(55555555, !this.user);
-  },
-  methods: {
-    Logout() {
-      localStorage.clear();
-      window.location.reload();
+    watch: {
+      token(newVale, oldvale) {
+        console.log("sdfhsadfhasdgfjasdjkf");
+      },
     },
-  },
-  computed: {
-    user() {
-      return this.$store.getters["users/GetUser"];
+    beforeCreate() {
+      this.$store.dispatch("users/getData")
+
+      // this.user = ;
     },
-    userLoadding() {
-      return this.$store.getters["users/loadding"];
+    created() {
+      console.log(55555555, !this.user);
     },
-  },
-};
+    methods: {
+      Logout() {
+        localStorage.clear();
+        window.location.reload();
+      },
+    },
+    computed: {
+      user() {
+        return this.$store.getters["users/GetUser"];
+      },
+      userLoadding() {
+        return this.$store.getters["users/loadding"];
+      },
+    },
+  };
 </script>

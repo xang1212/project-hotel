@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main class="d-flex align-center justify-center">
-      <v-col cols="10" sm="10" md="8" lg="6" class="mx-auto">
+      <v-col cols="8" sm="10" md="10" lg="6" class="mx-auto">
         <v-card class="py-5 elevation-6">
           <div class="text-uppercase mt-5">
             <h2>ເຂົ້າສູ່ລະບົບ</h2>
@@ -11,6 +11,10 @@
             ເຂົ້າສູ່ລະບົບບັນຊີຂອງທ່ານ ເພື່ອໃຫ້ທ່ານສາມາດຈອງຫ້ອງພັກ
             <br />ແລະ ແກ້ໄຂລາຍລະອຽດຕ່າງໆຂອງບັນຊີທ່ານ
           </h6>
+
+          <div v-if="error">
+          {{error}}
+          </div>
 
           <v-form ref="form" v-model="valid" lazy-validation class="pa-10">
             <v-row align="center" justify="center">
@@ -66,10 +70,10 @@ export default {
       valid: false,
       rules: {
         required: (value) => !!value || "Required.",
-        min: (v) => v.length >= 1 || "Min 8 characters",
+        min: (v) => v.length >= 8 || "Min 8 characters",
         emailMatch: () => `The email and password you entered don't match`,
       },
-
+      error: null,
       login: {
         email: "",
         password: "",
@@ -90,8 +94,13 @@ export default {
           setTimeout(() => {
             window.location.reload();
           }, 10);
-          // window.location.reload();
-        });
+          //window.location.reload();
+        })
+        .catch((error)=>{
+          console.log(error);
+          alert('Something was wrong !')
+        })
+
       }
 
       // const response = await axios.post('login', this.user);

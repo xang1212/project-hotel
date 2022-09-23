@@ -46,6 +46,9 @@
           <li>
             <router-link tag="a" to="/room"><span>ຫ້ອງພັກ</span></router-link>
           </li>
+          <li v-if="(user.role == 0 || user.role == 1)">
+            <router-link tag="a" to="/booking"><span>ຈອງຫ້ອງ</span></router-link>
+          </li>
           <li>
             <router-link tag="a" to="/info"
               ><span>ຂໍ້ມູນໂຮງແຮມ</span></router-link
@@ -55,7 +58,7 @@
             <router-link tag="a" to="/faq"><span>ຊ່ວຍເຫຼືອ</span></router-link>
           </li>
 
-          <li v-if="!(user.role == 0 || user.role == 1)">
+          <li v-if="(user.role == 0 || user.role == 1)">
             <div
               style="color: white; cursor: pointer"
               class="text-md-body-2 text-center ml-4"

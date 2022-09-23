@@ -12,7 +12,7 @@
             <v-img
               class="img-hover"
               height="250"
-              src="#"
+              src="https://cdn.discordapp.com/attachments/826834529435648000/1020233609988284427/duluxeRoom.png"
             ></v-img>
 
             <v-card-title>DELUXE ROOM</v-card-title>
@@ -41,7 +41,7 @@
             </v-card-text>
             <v-card-actions>
               <v-btn color="grey lighten-1" class="btn"
-                ><router-link to="/detail">
+                ><router-link to="/deluxe">
                   View Details<v-icon
                     >mdi-arrow-right-thick</v-icon
                   ></router-link
@@ -56,7 +56,7 @@
             <v-img
               class="img-hover"
               height="250"
-              src="#"
+              src="https://cdn.discordapp.com/attachments/826834529435648000/1020233610181226526/premierRoom.png"
             ></v-img>
 
             <v-card-title>PREMIER ROOM</v-card-title>
@@ -85,7 +85,7 @@
             </v-card-text>
             <v-card-actions>
               <v-btn color="grey lighten-1" class="btn"
-                ><router-link to="/">
+                ><router-link to="/premier">
                   View Details<v-icon
                     >mdi-arrow-right-thick</v-icon
                   ></router-link
@@ -99,7 +99,7 @@
             <v-img
               class="img-hover"
               height="250"
-              src="#"
+              src="https://cdn.discordapp.com/attachments/826834529435648000/1020233610390933524/suiteRoom.png"
             ></v-img>
 
             <v-card-title>SUITE</v-card-title>
@@ -128,7 +128,7 @@
             </v-card-text>
             <v-card-actions>
               <v-btn color="grey lighten-1" class="btn"
-                ><router-link to="/">
+                ><router-link to="/suite">
                   View Details<v-icon
                     >mdi-arrow-right-thick</v-icon
                   ></router-link

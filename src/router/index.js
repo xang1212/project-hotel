@@ -2,7 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/layouts/HomeView.vue'
 import Profile from '../views/layouts/Profile.vue'
-import detail from '../views/layouts/Booking/DetailView.vue'
+import deluxe from '../views/layouts/Booking/Deluxe.vue'
+import premier from '../views/layouts/Booking/Premier.vue'
+import suite from '../views/layouts/Booking/Suite.vue'
 
 Vue.use(VueRouter)
 
@@ -13,9 +15,19 @@ const routes = [
     component: HomeView
   },  
   {
-    path: '/detail',
-    name: 'detail',
-    component: detail
+    path: '/deluxe',
+    name: 'deluxe',
+    component: deluxe
+  },
+  {
+    path: '/premier',
+    name: 'premier',
+    component: premier
+  },
+  {
+    path: '/suite',
+    name: 'suite',
+    component: suite
   },
   {
     path: '/profile',

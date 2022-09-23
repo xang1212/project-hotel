@@ -53,7 +53,7 @@ const actions = {
         let a = 10;
         console.log(666,this.$headers)
         commit('sendData',a)
-    }
+    },
 };
 
 export default {
